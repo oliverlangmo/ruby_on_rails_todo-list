@@ -14,7 +14,11 @@ class TodosController < ApplicationController
   end
   def update
     @todo = Todo.find(params[:id])
-    @todo.update
+    @todo.update(params[item.id])
+  end
+  def destroy
+    @todo = Todo.find(params[:id])
+    @todo.destroy
   end
 
   private
